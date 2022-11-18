@@ -1,0 +1,28 @@
+.banner {
+  width: 100%;
+  height: 400px;
+  background-image: url(./../../Assets/bank-tree.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+  &--txt {
+    width: 364px;
+    height: 212px;
+    position: absolute;
+    background-color: azure;
+    right: 5%;
+    top: calc(50% - 100px);
+    display: flex;
+    flex-flow: column nowrap;
+    &--title {
+      margin: 25px 0 0 25px;
+      font-size: 28px;
+    }
+    &--content {
+      margin: 25px 0 0 25px;
+      font-size: 20px;
+    }
+  }
+}

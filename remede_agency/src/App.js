@@ -1,21 +1,29 @@
 import React from "react";
-import { useEffect } from "react";
-import axios from "axios";
+// import { useEffect } from "react";
+// import axios from "axios";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import D404 from "./Pages/D404";
+import "./Styles/index.scss";
+
 // import { useDispatch, useSelector } from "react-redux";
 
 const App = () => {
-  const getData = () => {
-    axios.get("http://localhost:3001").then((res) => console.log(res.data));
-  };
+  // const getData = () => {
+  //   axios.get("http://localhost:3001").then((res) => console.log(res.data));
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
+  // useEffect(() => {
+  //   getData();
+  // }, []);
   return (
-    <div>
-      <h1>Je suis la</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/user/:id/:extens" element={<Profile />} /> */}
+        <Route path="*" element={<D404 />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
