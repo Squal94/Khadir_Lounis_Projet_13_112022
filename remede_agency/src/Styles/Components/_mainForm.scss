@@ -1,0 +1,40 @@
+.mainForm {
+  width: 100%;
+  height: 800px;
+  background-color: #12002bff;
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  margin-top: 50px;
+  padding: 32px;
+  background-color: white;
+  width: 236px;
+  height: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  &--pic {
+    width: 20px;
+  }
+  &--title {
+    font-size: 28px;
+    color: #2c3e50ff;
+  }
+}
+
+.inputTexte {
+  display: block;
+  margin: 5px;
+}
+
+.inputCheckbox {
+  margin-left: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+}
