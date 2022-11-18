@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "../Components/Banner";
+import Feature from "../Components/Feature";
 import Nav from "../Components/Nav";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Nav />
       <Banner />
+      <Feature />
     </div>
   );
 };
