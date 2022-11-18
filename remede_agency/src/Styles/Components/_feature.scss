@@ -10,16 +10,19 @@
     justify-content: space-around;
     align-items: center;
     flex-flow: column nowrap;
+
     width: 25%;
     &__border {
       border: 10px solid #00bc77ff;
       border-radius: 50%;
+      margin: 20px;
       &--pic {
         width: 100px;
         margin: 10px;
       }
     }
     &--txt {
+      margin: 10px;
       font-size: 20px;
       text-align: center;
     }
