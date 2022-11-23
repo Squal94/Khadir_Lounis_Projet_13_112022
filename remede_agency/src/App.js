@@ -6,12 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import D404 from "./Pages/D404";
 import "./Styles/index.scss";
 import SignIn from "./Pages/SignIn";
+// import SignIn from "./Pages/SignIn";
 
 // import { useDispatch, useSelector } from "react-redux";
 
 const App = () => {
   // const getData = () => {
-  //   axios.get("http://localhost:3001").then((res) => console.log(res.data));
+  //   axios
+  //     .get("http://localhost:3001/api/v1/user")
+  //     .then((res) => console.log(res.data));
   // };
 
   // useEffect(() => {
