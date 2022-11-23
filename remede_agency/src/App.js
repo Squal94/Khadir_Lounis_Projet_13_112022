@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import D404 from "./Pages/D404";
 import "./Styles/index.scss";
 import SignIn from "./Pages/SignIn";
+import User from "./Pages/User";
 // import SignIn from "./Pages/SignIn";
 
 // import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +25,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignIn />} />
+        <Route path="/user" element={<User />} />
         {/* <Route path="/user/:id/:extens" element={<Profile />} /> */}
         <Route path="*" element={<D404 />} />
       </Routes>
