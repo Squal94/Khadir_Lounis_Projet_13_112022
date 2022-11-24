@@ -65,48 +65,7 @@ const User = () => {
 
   return (
     <div>
-      <main className="main bg-dark">
-        <div className="header">
-          <h1>
-            Welcome back
-            <br />
-            {`${firstName} ${lastName}`}
-          </h1>
-          {transaction ? (
-            <button
-              className="edit-button"
-              onClick={() => {
-                setTransaction(false);
-              }}
-            >
-              Edit Name
-            </button>
-          ) : (
-            <div className="edit-area">
-              <div className="input-edit-area"></div>
-              <div className="confirm-edit-area">
-                <button
-                  className="save"
-                  onClick={() => {
-                    saveTransaction();
-                  }}
-                >
-                  Save
-                </button>
-                <button
-                  className="cancel"
-                  onClick={() => {
-                    endTransaction();
-                  }}
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-        <h2 className="sr-only">Accounts</h2>
-      </main>
+      <main></main>
     </div>
   );
 };
