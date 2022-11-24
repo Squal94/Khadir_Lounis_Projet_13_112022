@@ -7,10 +7,10 @@ const User = () => {
   const firstName = useSelector((state) => state.user.firstName);
   const lastName = useSelector((state) => state.user.lastName);
   const Token = useSelector((state) => state.user.auth.Token);
-  const [edit, setEdit] = useState(true);
   const editFirstName = useRef();
   const editLastName = useRef();
   const dispatch = useDispatch();
+  const [transaction, setTransaction] = useState(true);
 
   const infoProfile = () => {
     const headers = {
@@ -32,8 +32,8 @@ const User = () => {
 
   infoProfile();
 
-  const confirmEdit = () => {
-    setEdit(true);
+  const saveTransaction = () => {
+    setTransaction(true);
 
     const headers = {
       "Content-Type": "application/json",
@@ -59,8 +59,8 @@ const User = () => {
       .catch((err) => console.log(err));
   };
 
-  const cancelEdit = () => {
-    setEdit(true);
+  const endTransaction = () => {
+    setTransaction(true);
   };
 
   return (
@@ -72,11 +72,11 @@ const User = () => {
             <br />
             {`${firstName} ${lastName}`}
           </h1>
-          {edit ? (
+          {transaction ? (
             <button
               className="edit-button"
               onClick={() => {
-                setEdit(false);
+                setTransaction(false);
               }}
             >
               Edit Name
@@ -88,7 +88,7 @@ const User = () => {
                 <button
                   className="save"
                   onClick={() => {
-                    confirmEdit();
+                    saveTransaction();
                   }}
                 >
                   Save
@@ -96,7 +96,7 @@ const User = () => {
                 <button
                   className="cancel"
                   onClick={() => {
-                    cancelEdit();
+                    endTransaction();
                   }}
                 >
                   Cancel
