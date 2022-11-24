@@ -78,19 +78,51 @@ const User = () => {
     <div>
       <Nav />
       <main className="userContainer">
-        <h1 className="userContainer__title">
-          Welcome Back <br />
-          <span></span>
-        </h1>
-        <button
-          className="userContainer__btnEdit"
-          onClick={() => {
-            setEdit(!edit);
-            console.log(edit);
-          }}
-        >
-          Edit name
-        </button>
+        {edit === false ? (
+          <div>
+            <h1 className="userContainer__title">
+              Welcome Back <br />
+              {firstName} {lastName}
+            </h1>
+            <button
+              className="userContainer__btnEdit"
+              onClick={() => {
+                setEdit(!edit);
+                console.log(edit);
+              }}
+            >
+              Edit name
+            </button>
+          </div>
+        ) : (
+          <div>
+            <h1 className="userContainer__title">
+              Welcome Back <br />
+              <div className="userContainer__title__input">
+                <input
+                  className="userContainer__title__input--current"
+                  type="text"
+                  ref={editFirstName}
+                />
+                <input
+                  className="userContainer__title__input--current"
+                  type="text"
+                  ref={editLastName}
+                />
+              </div>
+            </h1>
+            <button>Save</button>
+            <button
+              className="userContainer__title__input--btnValid"
+              onClick={() => {
+                setEdit(!edit);
+                console.log(edit);
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
