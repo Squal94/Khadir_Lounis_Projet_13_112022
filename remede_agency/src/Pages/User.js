@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import { infoUser } from "./../features/post.slice";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +12,7 @@ const User = () => {
   const editFirstName = useRef();
   const editLastName = useRef();
   const dispatch = useDispatch();
-  const [transaction, setTransaction] = useState(true);
+  // const [transaction, setTransaction] = useState(true);
   const [nameEdit, setNameEdit] = useState(false);
 
   const infoProfile = () => {
@@ -61,9 +61,9 @@ const User = () => {
       .catch((err) => console.log(err));
   };
 
-  const endTransaction = () => {
-    setTransaction(true);
-  };
+  // const endTransaction = () => {
+  //   setTransaction(true);
+  // };
 
   return (
     <div>
@@ -79,7 +79,7 @@ const User = () => {
               className="userContainer__btnEdit"
               onClick={() => {
                 setNameEdit(!nameEdit);
-                console.log(nameEdit);
+                // console.log(nameEdit);
               }}
             >
               Edit name
@@ -113,7 +113,7 @@ const User = () => {
               className="userContainer__title__input--btnValid"
               onClick={() => {
                 setNameEdit(!nameEdit);
-                console.log(nameEdit);
+                // console.log(nameEdit);
               }}
             >
               Cancel
@@ -149,48 +149,3 @@ export default User;
 //       })
 //       .catch((err) => console.log(err));
 //   };
-
-// <div>
-//   <main className="main bg-dark">
-//     <div className="header">
-//       <h1>
-//         Welcome back
-//         <br />
-//         {`${firstName} ${lastName}`}
-//       </h1>
-//       {transaction ? (
-//         <button
-//           className="edit-button"
-//           onClick={() => {
-//             setTransaction(false);
-//           }}
-//         >
-//           Edit Name
-//         </button>
-//       ) : (
-//         <div className="edit-area">
-//           <div className="input-edit-area"></div>
-//           <div className="confirm-edit-area">
-//             <button
-//               className="save"
-//               onClick={() => {
-//                 saveTransaction();
-//               }}
-//             >
-//               Save
-//             </button>
-//             <button
-//               className="cancel"
-//               onClick={() => {
-//                 endTransaction();
-//               }}
-//             >
-//               Cancel
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//     <h2 className="sr-only">Accounts</h2>
-//   </main>
-// </div>;
