@@ -13,6 +13,7 @@ const User = () => {
   const editLastName = useRef();
   const dispatch = useDispatch();
   // const [transaction, setTransaction] = useState(true);
+  const [error, setError] = useState(false);
   const [nameEdit, setNameEdit] = useState(false);
 
   const infoProfile = () => {
@@ -56,6 +57,7 @@ const User = () => {
           setNameEdit(!nameEdit);
         } else {
           console.log("Il faut au moins 1 caractère");
+          setError(true);
         }
       })
       .catch((err) => console.log(err));
@@ -73,7 +75,7 @@ const User = () => {
           <div>
             <h1 className="userContainer__title">
               Welcome Back <br />
-              {firstName} {lastName}
+              {firstName} {lastName} !
             </h1>
             <button
               className="userContainer__btnEdit"
@@ -102,6 +104,9 @@ const User = () => {
                 />
               </div>
             </h1>
+            <span className="formContainer--error">
+              {error && "Il faut au moins 1 caractère"}
+            </span>
             <button
               onClick={() => {
                 saveEdit();
@@ -113,6 +118,7 @@ const User = () => {
               className="userContainer__title__input--btnValid"
               onClick={() => {
                 setNameEdit(!nameEdit);
+                setError(false);
                 // console.log(nameEdit);
               }}
             >
