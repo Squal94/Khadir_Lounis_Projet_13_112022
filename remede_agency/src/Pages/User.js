@@ -13,7 +13,7 @@ const User = () => {
   const editLastName = useRef();
   const dispatch = useDispatch();
   const [transaction, setTransaction] = useState(true);
-  const [edit, setEdit] = useState(false);
+  const [nameEdit, setNameEdit] = useState(false);
 
   const infoProfile = () => {
     const headers = {
@@ -35,9 +35,7 @@ const User = () => {
 
   infoProfile();
 
-  const saveTransaction = () => {
-    setTransaction(true);
-
+  const saveEdit = () => {
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${Token}`,
@@ -55,8 +53,9 @@ const User = () => {
       .then(() => {
         if (data.firstName.length > 0 && data.lastName.length > 0) {
           dispatch(infoUser([data.firstName, data.lastName]));
+          setNameEdit(!nameEdit);
         } else {
-          console.log("Nom ou Prenom incorrect");
+          console.log("Il faut au moins 1 caractère");
         }
       })
       .catch((err) => console.log(err));
@@ -66,19 +65,11 @@ const User = () => {
     setTransaction(true);
   };
 
-  const name = (e) => {
-    if (edit === false) {
-      return <span>je marche false</span>;
-    } else {
-      return <span>je marche true</span>;
-    }
-  };
-
   return (
     <div>
       <Nav />
       <main className="userContainer">
-        {edit === false ? (
+        {nameEdit === false ? (
           <div>
             <h1 className="userContainer__title">
               Welcome Back <br />
@@ -87,8 +78,8 @@ const User = () => {
             <button
               className="userContainer__btnEdit"
               onClick={() => {
-                setEdit(!edit);
-                console.log(edit);
+                setNameEdit(!nameEdit);
+                console.log(nameEdit);
               }}
             >
               Edit name
@@ -111,12 +102,18 @@ const User = () => {
                 />
               </div>
             </h1>
-            <button>Save</button>
+            <button
+              onClick={() => {
+                saveEdit();
+              }}
+            >
+              Save
+            </button>
             <button
               className="userContainer__title__input--btnValid"
               onClick={() => {
-                setEdit(!edit);
-                console.log(edit);
+                setNameEdit(!nameEdit);
+                console.log(nameEdit);
               }}
             >
               Cancel
@@ -130,6 +127,28 @@ const User = () => {
 };
 
 export default User;
+
+// const name = (e) => {
+//   if (edit === false) {
+//     return <span>je marche false</span>;
+//   } else {
+//     return <span>je marche true</span>;
+//   }
+// };
+
+//  axios
+//       .put("http://localhost:3001/api/v1/user/profile", data, {
+//         headers: headers,
+//       })
+//       .then(() => {
+//         if (data.firstName.length > 0 && data.lastName.length > 0) {
+//           dispatch(infoUser([data.firstName, data.lastName]));
+//         } else {
+//           console.log("Nom ou Prenom incorrect");
+//         }
+//       })
+//       .catch((err) => console.log(err));
+//   };
 
 // <div>
 //   <main className="main bg-dark">
