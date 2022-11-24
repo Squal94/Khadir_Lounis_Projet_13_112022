@@ -1,21 +1,21 @@
-import React, { useRef } from "react";
-import userPic from "./../Assets/IconSign.png";
-import { useDispatch } from "react-redux";
-import { loginUser } from "../features/post.slice";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../features/post.slice";
+import userPic from "./../Assets/IconSign.png";
 
 const SignForm = () => {
   const userEmailRef = useRef();
   const UserPassRef = useRef();
-  const navigate = useNavigate;
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleLogin = (e) => {
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // console.log(userEmailRef.current.value, UserPassRef.current.value);
 
     const headers = { "Content-Type": "application/json" };
-
     const data = {
       email: userEmailRef.current.value,
       password: UserPassRef.current.value,
@@ -27,13 +27,17 @@ const SignForm = () => {
       })
 
       .then((res) => {
-        // dispatch(loginUser([console.log(res.data)]));
-        dispatch(loginUser([res.data.body.token, data.email]));
+        // dispatch(login([console.log(res.data)]));
+        dispatch(login([res.data.body.token, data.email]));
         navigate("/user");
       })
       .catch((err) => {
         console.log(err);
+        console.log("je suis pas la ");
+        setError(true);
       });
+
+    // console.log(userEmailRef.current.value, UserPassRef.current.value);
   };
 
   return (
@@ -69,6 +73,9 @@ const SignForm = () => {
           <input type="checkbox" id="remember-me" />
           <label className="inputCheckbox">Remember me</label>
         </div>
+        <span className="formContainer--error">
+          {error && "Email ou mot de passe incorrect"}
+        </span>
 
         <input
           type="submit"

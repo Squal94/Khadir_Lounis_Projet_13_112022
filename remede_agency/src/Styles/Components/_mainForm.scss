@@ -23,6 +23,13 @@
     font-size: 28px;
     color: #2c3e50ff;
   }
+  &--error {
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+    font-size: 18px;
+    color: rgb(183, 32, 32);
+  }
 }
 
 .inputTexte {
