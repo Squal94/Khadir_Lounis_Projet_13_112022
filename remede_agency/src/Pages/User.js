@@ -4,6 +4,7 @@ import { infoUser } from "./../features/post.slice";
 import { useDispatch, useSelector } from "react-redux";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
+import Transaction from "../Components/Transaction";
 
 const User = () => {
   const firstName = useSelector((state) => state.user.firstName);
@@ -56,7 +57,6 @@ const User = () => {
           dispatch(infoUser([data.firstName, data.lastName]));
           setNameEdit(!nameEdit);
         } else {
-          console.log("Il faut au moins 1 caractère");
           setError(true);
         }
       })
@@ -70,15 +70,15 @@ const User = () => {
   return (
     <div>
       <Nav />
-      <main className="userContainer">
+      <main className="user">
         {nameEdit === false ? (
-          <div>
-            <h1 className="userContainer__title">
+          <div className="user__Container">
+            <h1 className="user__Container__title">
               Welcome Back <br />
               {firstName} {lastName} !
             </h1>
             <button
-              className="userContainer__btnEdit"
+              className="user__Container__btnEdit"
               onClick={() => {
                 setNameEdit(!nameEdit);
                 // console.log(nameEdit);
@@ -88,22 +88,24 @@ const User = () => {
             </button>
           </div>
         ) : (
-          <div>
-            <h1 className="userContainer__title">
+          <div className="user__Container">
+            <h1 className="user__Container__title">
               Welcome Back <br />
-              <div className="userContainer__title__input">
-                <input
-                  className="userContainer__title__input--current"
-                  type="text"
-                  ref={editFirstName}
-                />
-                <input
-                  className="userContainer__title__input--current"
-                  type="text"
-                  ref={editLastName}
-                />
-              </div>
             </h1>
+            <div className="user__Container__title__input">
+              <input
+                className="user__Container__title__input--current"
+                type="text"
+                placeholder={firstName}
+                ref={editFirstName}
+              />
+              <input
+                className="user__Container__title__input--current"
+                type="text"
+                placeholder={lastName}
+                ref={editLastName}
+              />
+            </div>
             <span className="formContainer--error">
               {error && "Il faut au moins 1 caractère"}
             </span>
@@ -115,7 +117,7 @@ const User = () => {
               Save
             </button>
             <button
-              className="userContainer__title__input--btnValid"
+              className="user__Container__title__input--btnValid"
               onClick={() => {
                 setNameEdit(!nameEdit);
                 setError(false);
@@ -126,6 +128,13 @@ const User = () => {
             </button>
           </div>
         )}
+        <div className="user__transaction">
+          <Transaction
+            reference="Argent Bank Checking (x8349)"
+            money="$2,082.79"
+            balance="Available Balance"
+          />
+        </div>
       </main>
       <Footer />
     </div>
