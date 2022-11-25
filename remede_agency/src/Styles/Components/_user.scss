@@ -23,6 +23,14 @@
           border: 2px solid rgb(230, 230, 230);
           margin: 10px 5px;
         }
+        &--btn button {
+          border: 1px solid #b1b0f0;
+          width: 100px;
+          height: 30px;
+          margin: 0 5px;
+          color: #6458f5;
+          font-weight: bold;
+        }
       }
     }
     &__btnEdit {
@@ -31,6 +39,50 @@
       color: #fff;
       font-weight: bold;
       padding: 10px;
+    }
+  }
+  &__transaction {
+    margin: 40px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    &__Container {
+      width: 1024px;
+      height: 82px;
+      padding: 24px;
+      margin-bottom: 40px;
+      background-color: #fff;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      &__info {
+        display: flex;
+        flex-flow: column nowrap;
+        &--ref {
+          font-size: 1rem;
+          color: #2c3e50;
+        }
+        &--money {
+          font-size: 2.5rem;
+          font-weight: bold;
+          color: #2c3e50;
+        }
+        &--balance {
+          font-size: 1rem;
+          color: #2c3e50;
+        }
+      }
+      &__btn {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-color: #00bc77;
+        background-color: #00bc77;
+        color: #fff;
+      }
     }
   }
 }

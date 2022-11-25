@@ -106,26 +106,28 @@ const User = () => {
                 ref={editLastName}
               />
             </div>
+            <div className="user__Container__title__input--btn">
+              <button
+                onClick={() => {
+                  saveEdit();
+                }}
+              >
+                Save
+              </button>
+              <button
+                className="user__Container__title__input--btnValid"
+                onClick={() => {
+                  setNameEdit(!nameEdit);
+                  setError(false);
+                  // console.log(nameEdit);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
             <span className="formContainer--error">
               {error && "Il faut au moins 1 caractère"}
             </span>
-            <button
-              onClick={() => {
-                saveEdit();
-              }}
-            >
-              Save
-            </button>
-            <button
-              className="user__Container__title__input--btnValid"
-              onClick={() => {
-                setNameEdit(!nameEdit);
-                setError(false);
-                // console.log(nameEdit);
-              }}
-            >
-              Cancel
-            </button>
           </div>
         )}
         <div className="user__transaction">
@@ -133,6 +135,16 @@ const User = () => {
             reference="Argent Bank Checking (x8349)"
             money="$2,082.79"
             balance="Available Balance"
+          />
+          <Transaction
+            reference="Argent Bank Savings (x6712)"
+            money="$10,928.42"
+            balance="Available Balance"
+          />
+          <Transaction
+            reference="Argent Bank Credit Card (x8349)"
+            money="$184.30"
+            balance="Current Balance"
           />
         </div>
       </main>
