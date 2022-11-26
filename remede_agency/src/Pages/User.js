@@ -63,10 +63,6 @@ const User = () => {
       .catch((err) => console.log(err));
   };
 
-  // const endTransaction = () => {
-  //   setTransaction(true);
-  // };
-
   return (
     <div>
       <Nav />

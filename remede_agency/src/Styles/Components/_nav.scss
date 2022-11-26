@@ -22,8 +22,19 @@
       margin-right: 5px;
     }
     &--txt {
-      font-size: 24px;
+      font-size: 20px;
       color: #2c3e50ff;
+      text-decoration: none;
     }
   }
+  &__btnLogout {
+    align-items: center;
+    margin-left: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+a {
+  text-decoration: none;
 }
