@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./../Assets/argentBankLogo.png";
 import IconSign from "./../Assets/IconSign.png";
 import IconLogout from "./../Assets/logout-icon.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../features/post.slice";
 
@@ -10,12 +10,6 @@ const Nav = () => {
   const logged = useSelector((state) => state.user.auth.Logged);
   const firstName = useSelector((state) => state.user.firstName);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  // const [loggedAffichage, setloggedAffichage] = useState(false);
-
-  // useEffect(() => {
-  //   setloggedAffichage(logged);
-  // }, [logged]);
 
   return (
     <div className="containerNav">
@@ -47,29 +41,22 @@ const Nav = () => {
             alt=" Log in"
           />
           <p className="containerNav__btnSign--txt">{firstName}</p>
-          {/* <NavLink
+          <NavLink
             to="/"
             onClick={() => {
               console.log(logged);
-              dispatch(logout);
-            }}
-          > */}
-          <div
-            className="containerNav__btnLogout"
-            onClick={() => {
-              console.log(logged);
               dispatch(logout());
-              navigate("/");
             }}
           >
-            <img
-              className="containerNav__btnSign--img"
-              src={IconLogout}
-              alt=" Logout"
-            />
-            <p className="containerNav__btnSign--txt">Sign Out</p>
-          </div>
-          {/* </NavLink> */}
+            <div className="containerNav__btnLogout">
+              <img
+                className="containerNav__btnSign--img"
+                src={IconLogout}
+                alt=" Logout"
+              />
+              <p className="containerNav__btnSign--txt">Sign Out</p>
+            </div>
+          </NavLink>
         </div>
       )}
     </div>
