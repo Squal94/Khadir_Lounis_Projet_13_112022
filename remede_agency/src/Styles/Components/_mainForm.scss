@@ -16,6 +16,9 @@
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
+  &__remember {
+    margin-top: 10px;
+  }
   &--pic {
     width: 20px;
   }
@@ -30,15 +33,29 @@
     font-size: 18px;
     color: rgb(183, 32, 32);
   }
+  &__submit {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+  }
 }
 
 .inputTexte {
+  font-weight: bold;
   display: block;
+  color: #2c3e50;
   margin: 5px;
 }
 
 .inputCheckbox {
-  margin-left: 5px;
+  margin: 10px 5px 5px 5px;
+  color: #2c3e50;
 }
 
 input {

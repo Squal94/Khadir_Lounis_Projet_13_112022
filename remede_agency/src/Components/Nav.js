@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <div className="containerNav">
       <div className="containerNav__logo">
-        <NavLink>
+        <NavLink to="/">
           <img
             className="containerNav__logo--img"
             src={Logo}
@@ -15,7 +15,7 @@ const Nav = () => {
           />
         </NavLink>
       </div>
-      <NavLink>
+      <NavLink to="/signin">
         <div className="containerNav__btnSign">
           <img
             className="containerNav__btnSign--img"

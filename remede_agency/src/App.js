@@ -2,7 +2,7 @@ import React from "react";
 // import { useEffect } from "react";
 // import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./Pages/Home";
+import Home from "./Pages/Home";
 import D404 from "./Pages/D404";
 import "./Styles/index.scss";
 import SignIn from "./Pages/SignIn";
@@ -24,7 +24,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignIn />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/user" element={<User />} />
         {/* <Route path="/user/:id/:extens" element={<Profile />} /> */}
         <Route path="*" element={<D404 />} />

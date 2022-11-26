@@ -80,7 +80,7 @@ const SignForm = () => {
         <input
           type="submit"
           className="formContainer__submit"
-          value="Sign-in"
+          value="Sign In"
         />
       </form>
     </div>
