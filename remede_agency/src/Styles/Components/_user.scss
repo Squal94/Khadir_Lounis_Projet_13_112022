@@ -1,7 +1,7 @@
 .user {
   width: 100%;
   min-height: 800px;
-  background-color: #12002bff;
+  background-color: $background-primary;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -16,27 +16,27 @@
       text-align: center;
       margin: 20px auto;
       font-size: 2em;
-      color: white;
+      color: $color-tertiary;
       line-height: 50px;
       &__input {
         &--current {
-          border: 2px solid rgb(230, 230, 230);
+          border: 2px solid #e6e6e6;
           margin: 10px 5px;
         }
         &--btn button {
-          border: 1px solid #b1b0f0;
+          border: 1px solid $border-tertiary;
           width: 100px;
           height: 30px;
           margin: 0 5px;
-          color: #6458f5;
+          color: $color-nameEdit;
           font-weight: bold;
         }
       }
     }
     &__btnEdit {
-      border-color: #00bc77;
-      background-color: #00bc77;
-      color: #fff;
+      border-color: $border-primary;
+      background-color: $background-tertiary;
+      color: $color-tertiary;
       font-weight: bold;
       padding: 10px;
     }
@@ -51,7 +51,7 @@
       height: 82px;
       padding: 24px;
       margin-bottom: 40px;
-      background-color: #fff;
+      background-color: $background-secondary;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -61,16 +61,16 @@
         flex-flow: column nowrap;
         &--ref {
           font-size: 1rem;
-          color: #2c3e50;
+          color: $color-primary;
         }
         &--money {
           font-size: 2.5rem;
           font-weight: bold;
-          color: #2c3e50;
+          color: $color-primary;
         }
         &--balance {
           font-size: 1rem;
-          color: #2c3e50;
+          color: $color-primary;
         }
       }
       &__btn {
@@ -79,9 +79,9 @@
         padding: 8px;
         font-size: 1.1rem;
         font-weight: bold;
-        border-color: #00bc77;
-        background-color: #00bc77;
-        color: #fff;
+        border-color: $border-primary;
+        background-color: $background-tertiary;
+        color: $color-tertiary;
       }
     }
   }

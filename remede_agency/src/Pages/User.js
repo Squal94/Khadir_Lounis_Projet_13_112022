@@ -48,19 +48,19 @@ const User = () => {
       lastName: editLastName.current.value,
     };
 
-    axios
-      .put("http://localhost:3001/api/v1/user/profile", data, {
-        headers: headers,
-      })
-      .then(() => {
-        if (data.firstName.length > 0 && data.lastName.length > 0) {
+    if (data.firstName.length > 0 && data.lastName.length > 0) {
+      axios
+        .put("http://localhost:3001/api/v1/user/profile", data, {
+          headers: headers,
+        })
+        .then(() => {
           dispatch(infoUser([data.firstName, data.lastName]));
           setNameEdit(!nameEdit);
-        } else {
-          setError(true);
-        }
-      })
-      .catch((err) => console.log(err));
+        })
+        .catch((err) => console.log(err));
+    } else {
+      setError(true);
+    }
   };
 
   return (

@@ -13,7 +13,7 @@
 
     width: 25%;
     &__border {
-      border: 10px solid #00bc77ff;
+      border: 10px solid $border-primary;
       border-radius: 50%;
       margin: 20px;
       &--pic {
