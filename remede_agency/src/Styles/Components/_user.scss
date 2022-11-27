@@ -1,23 +1,17 @@
 .user {
-  width: 100%;
-  min-height: 800px;
   background-color: $background-primary;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
+  @include columnStart;
+  min-height: 800px;
   padding: 20px;
+  width: 100%;
   &__Container {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    @include columnCenter;
     &__title {
-      text-align: center;
-      margin: 20px auto;
-      font-size: 2em;
       color: $color-tertiary;
+      font-size: 2em;
       line-height: 50px;
+      margin: 20px auto;
+      text-align: center;
       &__input {
         &--current {
           border: 2px solid #e6e6e6;
@@ -25,11 +19,11 @@
         }
         &--btn button {
           border: 1px solid $border-tertiary;
-          width: 100px;
-          height: 30px;
-          margin: 0 5px;
           color: $color-nameEdit;
           font-weight: bold;
+          height: 30px;
+          margin: 0 5px;
+          width: 100px;
         }
       }
     }
@@ -42,46 +36,46 @@
     }
   }
   &__transaction {
-    margin: 40px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    margin: 40px;
     &__Container {
-      width: 1024px;
-      height: 82px;
-      padding: 24px;
-      margin-bottom: 40px;
       background-color: $background-secondary;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 40px;
+      padding: 24px;
+      height: 82px;
+      width: 1024px;
       &__info {
         display: flex;
         flex-flow: column nowrap;
         &--ref {
-          font-size: 1rem;
           color: $color-primary;
+          font-size: 1rem;
         }
         &--money {
+          color: $color-primary;
           font-size: 2.5rem;
           font-weight: bold;
-          color: $color-primary;
         }
         &--balance {
-          font-size: 1rem;
           color: $color-primary;
+          font-size: 1rem;
         }
       }
       &__btn {
-        display: block;
-        width: 100%;
-        padding: 8px;
-        font-size: 1.1rem;
-        font-weight: bold;
+        color: $color-tertiary;
         border-color: $border-primary;
         background-color: $background-tertiary;
-        color: $color-tertiary;
+        display: block;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 8px;
+        width: 100%;
       }
     }
   }

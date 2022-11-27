@@ -4,8 +4,10 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
+// Color
+
 $color-primary: #2c3e50ff;
-$color-secondary: rgb(183, 32, 32);
+$color-secondary: #b72020;
 $color-tertiary: white;
 $color-nameEdit: #6458f5;
 
@@ -16,3 +18,28 @@ $background-tertiary: #00bc77;
 $border-primary: #00bc77;
 $border-secondary: #ccccccff;
 $border-tertiary: #b1b0f0;
+
+// Mixin
+
+@mixin columnCenter {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin columnAround {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin columnStart {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+//Breakpoint

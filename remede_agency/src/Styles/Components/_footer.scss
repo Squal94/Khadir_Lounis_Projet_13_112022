@@ -1,8 +1,8 @@
 .footer {
-  width: 100%;
+  border-top: 3px solid $border-secondary;
   display: flex;
   justify-content: center;
-  border-top: 3px solid $border-secondary;
+  width: 100%;
   &--txt {
     font-size: 18px;
     padding: 32px 0 24px 0;

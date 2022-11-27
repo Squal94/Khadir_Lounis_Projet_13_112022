@@ -1,28 +1,28 @@
 .banner {
-  width: 100%;
-  height: 400px;
   background-image: url(./../../Assets/bank-tree.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 400px;
   object-fit: cover;
   position: relative;
+  width: 100%;
   &--txt {
-    width: 364px;
-    height: 212px;
-    position: absolute;
     background-color: $background-secondary;
-    right: 5%;
-    top: calc(50% - 100px);
     display: flex;
     flex-flow: column nowrap;
+    height: 212px;
+    top: calc(50% - 100px);
+    position: absolute;
+    right: 5%;
+    width: 364px;
     &--title {
-      margin: 25px 0 0 25px;
       font-size: 28px;
+      margin: 25px 0 0 25px;
     }
     &--content {
-      margin: 25px 0 0 25px;
       font-size: 20px;
+      margin: 25px 0 0 25px;
     }
   }
 }
