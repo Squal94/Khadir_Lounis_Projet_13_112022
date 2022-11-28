@@ -42,7 +42,7 @@ $border-tertiary: #b1b0f0;
   align-items: center;
 }
 
-@mixin columnCenterBetween {
+@mixin rowCenterBetween {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;

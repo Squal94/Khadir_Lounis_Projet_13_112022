@@ -1,5 +1,5 @@
 .containerNav {
-  @include columnCenterBetween;
+  @include rowCenterBetween;
   width: 100%;
   height: 55px;
   &__logo {

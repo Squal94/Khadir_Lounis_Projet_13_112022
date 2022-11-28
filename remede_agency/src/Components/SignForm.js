@@ -50,8 +50,9 @@ const SignForm = () => {
         }}
       >
         <div className="formContainer__email">
-          <label className="inputTexte">Username</label>
+          <label className="inputTexteForm">Username</label>
           <input
+            className="inputTexte"
             type="email"
             id="email"
             placeholder="xyz@gmail.com"
@@ -60,8 +61,9 @@ const SignForm = () => {
           />
         </div>
         <div className="formContainer__password">
-          <label className="inputTexte">Password</label>
+          <label className="inputTexteForm">Password</label>
           <input
+            className="inputTexte"
             type="password"
             id="password"
             ref={UserPassRef}
@@ -70,7 +72,7 @@ const SignForm = () => {
           />
         </div>
         <div className="formContainer__remember">
-          <input type="checkbox" id="remember-me" />
+          <input className="inputCheckbox" type="checkbox" id="remember-me" />
           <label className="inputCheckbox">Remember me</label>
         </div>
         <span className="formContainer--error">
