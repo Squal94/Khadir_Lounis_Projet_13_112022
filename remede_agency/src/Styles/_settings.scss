@@ -43,3 +43,20 @@ $border-tertiary: #b1b0f0;
 }
 
 //Breakpoint
+
+$breakpoints: (
+  "small": 767px,
+  "medium": 992px,
+  "large": 1240px,
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Ce format n'existe pas `#{$breakpoint}`. "
+        + "Les formats existants sont : #{map-keys($breakpoints)}.";
+  }
+}

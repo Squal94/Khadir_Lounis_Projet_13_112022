@@ -8,21 +8,30 @@
   position: relative;
   width: 100%;
   &--txt {
-    background-color: $background-secondary;
-    display: flex;
-    flex-flow: column nowrap;
-    height: 212px;
-    top: calc(50% - 100px);
     position: absolute;
-    right: 5%;
-    width: 364px;
+    top: 50px;
+    right: 50px;
+    width: 300px;
+    margin: 2rem;
+    padding: 2rem;
+    text-align: left;
+    background-color: $background-secondary;
+    color: $color-primary;
+    // display: flex;
+    // flex-flow: column nowrap;
+    // height: 212px;
+    // top: calc(50% - 100px);
+    // position: absolute;
+    // right: 5%;
+    // width: 364px;
     &--title {
-      font-size: 28px;
-      margin: 25px 0 0 25px;
+      font-size: 24px;
+      margin-bottom: 20px;
+      // margin: 25px 0 0 25px;
     }
     &--content {
-      font-size: 20px;
-      margin: 25px 0 0 25px;
+      font-size: 18px;
+      // margin: 25px 0 0 25px;
     }
   }
 }
