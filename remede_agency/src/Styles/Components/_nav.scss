@@ -1,12 +1,9 @@
 .containerNav {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  @include columnCenterBetween;
   width: 100%;
-  padding: 5px 20px;
   height: 55px;
   &__logo {
+    padding: 5px 20px;
     &--img {
       margin: 10px;
       max-height: 55px;
@@ -15,10 +12,9 @@
     }
   }
   &__btnSign {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    margin-right: 25px;
+    @include rowCenter;
+    padding: 5px 20px;
+    // margin-right: 25px;
     &--img {
       height: 16px;
       margin-right: 5px;
@@ -31,10 +27,9 @@
     }
   }
   &__btnLogout {
+    @include rowCenter;
     margin-left: 10px;
-    display: flex;
-    align-items: center;
-    flex-flow: row nowrap;
+    padding: 5px 20px;
   }
 }
 

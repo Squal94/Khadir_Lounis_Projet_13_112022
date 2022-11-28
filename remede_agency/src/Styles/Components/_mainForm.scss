@@ -2,7 +2,7 @@
   background-color: $background-primary;
   display: flex;
   justify-content: center;
-  height: 800px;
+  height: calc(100vh - (55px + 77px));
   width: 100%;
 }
 

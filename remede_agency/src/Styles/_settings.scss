@@ -42,6 +42,19 @@ $border-tertiary: #b1b0f0;
   align-items: center;
 }
 
+@mixin columnCenterBetween {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin rowCenter {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
 //Breakpoint
 
 $breakpoints: (
