@@ -35,9 +35,10 @@
   &--error {
     color: $color-secondary;
     display: block;
-    font-size: 18px;
+    font-size: 14px;
     margin: 10px auto;
     width: 100%;
+    text-align: center;
   }
   &__submit {
     color: $color-tertiary;
