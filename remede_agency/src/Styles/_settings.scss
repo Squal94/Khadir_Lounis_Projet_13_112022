@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 // Color
@@ -55,11 +56,22 @@ $border-tertiary: #b1b0f0;
   align-items: center;
 }
 
+@mixin rowAroundStart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  @include respond-to("medium") {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+
 //Breakpoint
 
 $breakpoints: (
   "small": 767px,
-  "medium": 992px,
+  "medium": 920px,
   "large": 1240px,
 ) !default;
 
@@ -73,3 +85,7 @@ $breakpoints: (
         + "Les formats existants sont : #{map-keys($breakpoints)}.";
   }
 }
+
+// @include respond-to("small") {
+//       font-size: 12px;
+//     }

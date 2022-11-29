@@ -6,6 +6,7 @@
   width: 100%;
   &__Container {
     @include columnCenter;
+    margin-bottom: 40px;
     &__title {
       color: $color-tertiary;
       font-size: 2em;
@@ -40,7 +41,8 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    margin: 40px;
+    align-items: center;
+    width: 100%;
     &__Container {
       background-color: $background-secondary;
       display: flex;
@@ -49,11 +51,26 @@
       align-items: center;
       margin-bottom: 40px;
       padding: 24px;
-      height: 82px;
-      width: 1024px;
+      width: 90%;
+      @include respond-to("medium") {
+        flex-flow: column nowrap;
+        justify-content: initial;
+        align-items: flex-start;
+        width: 90%;
+        // position: relative;
+      }
       &__info {
         display: flex;
         flex-flow: column nowrap;
+        @include respond-to("medium") {
+          // position: absolute;
+          // left: 10px;
+          // right: 10px;
+          // bottom: 30px;
+          width: 100%;
+          // margin-top: 20px;
+        }
+
         &--ref {
           color: $color-primary;
           font-size: 1rem;
@@ -67,6 +84,12 @@
           color: $color-primary;
           font-size: 1rem;
         }
+      }
+    }
+    &__ContainerBtn {
+      @include respond-to("medium") {
+        margin-top: 20px;
+        width: 100%;
       }
       &__btn {
         color: $color-tertiary;

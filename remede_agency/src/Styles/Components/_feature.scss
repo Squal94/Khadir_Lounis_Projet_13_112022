@@ -1,13 +1,13 @@
 .featureContainer {
-  display: flex;
+  @include rowAroundStart;
   margin: 40px auto;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-flow: row nowrap;
   width: 100%;
   &__item {
     @include columnAround;
     width: 25%;
+    @include respond-to("medium") {
+      width: 90%;
+    }
     &__border {
       border: 10px solid $border-primary;
       border-radius: 50%;

@@ -7,6 +7,12 @@
   object-fit: cover;
   position: relative;
   width: 100%;
+  @include respond-to("medium") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &--txt {
     position: absolute;
     top: 50px;
@@ -17,6 +23,11 @@
     text-align: left;
     background-color: $background-secondary;
     color: $color-primary;
+    @include respond-to("medium") {
+      top: initial;
+      right: initial;
+      position: relative;
+    }
     &--title {
       font-size: 24px;
       margin-bottom: 20px;

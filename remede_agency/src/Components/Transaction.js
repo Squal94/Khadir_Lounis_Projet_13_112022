@@ -28,8 +28,8 @@ const Transaction = (props) => {
             {props.balance}
           </p>
         </div>
-        <div>
-          <button className="user__transaction__Container__btn">
+        <div className="user__transaction__ContainerBtn">
+          <button className="user__transaction__ContainerBtn__btn">
             View transactions
           </button>
         </div>

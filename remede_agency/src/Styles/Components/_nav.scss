@@ -14,7 +14,7 @@
   &__btnSign {
     @include rowCenter;
     padding: 5px 20px;
-    // margin-right: 25px;
+    min-width: 100px;
     &--img {
       height: 16px;
       margin-right: 5px;
