@@ -6,16 +6,30 @@ import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Transaction from "../Components/Transaction";
 
+/**
+ * Component Transaction
+ * @param {firstName,lastName,Token} Data These values are imported from the database after validation of the login
+ * @param {editFirstName,editLastName} inputs capture of inputs with useRef hook
+ *
+ * This component is used for formatting information received by the database and displaying user information
+ */
+
 const User = () => {
+  // Hook useSelector is used to retrieve information from the store
   const firstName = useSelector((state) => state.user.firstName);
   const lastName = useSelector((state) => state.user.lastName);
   const Token = useSelector((state) => state.user.auth.Token);
+  // input capture by hook use Ref
   const editFirstName = useRef();
   const editLastName = useRef();
+  // hook useDispatch comes from react-redux and is used to call a post.slice.js action
   const dispatch = useDispatch();
-  // const [transaction, setTransaction] = useState(true);
+  // useState error is used to display an error message if the email and password check are incorrect
   const [error, setError] = useState(false);
+  // useState nameEdit is boolean variable , it is used to check if the btnEdit is active or not, to display the name change form
   const [nameEdit, setNameEdit] = useState(false);
+
+  // infoProfile is the function for sending Token with axios to the database and receive information user from the database
 
   const infoProfile = () => {
     const headers = {
@@ -37,6 +51,7 @@ const User = () => {
 
   infoProfile();
 
+  // saveEdit is the function that will send the new first and last names enter in the inputs, in the store
   const saveEdit = () => {
     const headers = {
       "Content-Type": "application/json",
@@ -150,25 +165,3 @@ const User = () => {
 };
 
 export default User;
-
-// const name = (e) => {
-//   if (edit === false) {
-//     return <span>je marche false</span>;
-//   } else {
-//     return <span>je marche true</span>;
-//   }
-// };
-
-//  axios
-//       .put("http://localhost:3001/api/v1/user/profile", data, {
-//         headers: headers,
-//       })
-//       .then(() => {
-//         if (data.firstName.length > 0 && data.lastName.length > 0) {
-//           dispatch(infoUser([data.firstName, data.lastName]));
-//         } else {
-//           console.log("Nom ou Prenom incorrect");
-//         }
-//       })
-//       .catch((err) => console.log(err));
-//   };

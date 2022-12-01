@@ -1,19 +1,13 @@
 import React from "react";
 
+/**
+ * Component Transaction
+ * @param {props} Data (reference,money,balance) hard input data in the user component.
+ *
+ * Component for displaying and formatting accounts data on the user page.
+ */
+
 const Transaction = (props) => {
-  //   const [referenceT, setreferenceT] = useState("");
-  //   const [moneyT, setmoneyT] = useState("");
-  //   const [balanceT, setbalanceT] = useState("");
-
-  //   useEffect(() => {
-  //     setreferenceT(reference);
-  //     setmoneyT(money);
-  //     setbalanceT(balance);
-  //   }, [balance, money, reference]);
-  //   console.log(reference?.reference);
-  //   console.log(money?.money);
-  //   console.log(balance?.balance);
-
   if (props) {
     return (
       <div className="user__transaction__Container">
