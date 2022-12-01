@@ -7,27 +7,19 @@ import D404 from "./Pages/D404";
 import "./Styles/index.scss";
 import SignIn from "./Pages/SignIn";
 import User from "./Pages/User";
-// import SignIn from "./Pages/SignIn";
 
-// import { useDispatch, useSelector } from "react-redux";
+/**
+ * Component App
+ * Component App Generates a router that redirects pages according to entries
+ */
 
 const App = () => {
-  // const getData = () => {
-  //   axios
-  //     .get("http://localhost:3001/api/v1/user")
-  //     .then((res) => console.log(res.data));
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/user" element={<User />} />
-        {/* <Route path="/user/:id/:extens" element={<Profile />} /> */}
         <Route path="*" element={<D404 />} />
       </Routes>
     </BrowserRouter>
@@ -35,5 +27,3 @@ const App = () => {
 };
 
 export default App;
-
-// dispatch(setPicturesData(res.data))
