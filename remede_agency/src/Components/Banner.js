@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Component Banner
+ * The banner component is used to display the central image of the home page
+ * and its text in absolute position
+ */
+
 const Banner = () => {
   return (
     <div>

@@ -5,13 +5,26 @@ import { useDispatch } from "react-redux";
 import { login } from "../features/post.slice";
 import userPic from "./../Assets/IconSign.png";
 
+/**
+ * Component SignForm
+ * @param {userEmailRef,UserPassRef} Data  are the inputs used and captured by the useRef hook and sent to axios
+ * @param {axios} Axios Receives the data and bites the post method allows sending the data to the server
+ *
+ * SignForm is the component allowing the form formatting as well as the capture and sending of the data to the server
+ */
+
 const SignForm = () => {
+  // input capture by hook use Ref
   const userEmailRef = useRef();
   const UserPassRef = useRef();
+  // useState error is used to display an error message if the email and password check are incorrect
   const [error, setError] = useState(false);
+  // hook useNavigate allows the redirection of the browser according to its use
   const navigate = useNavigate();
+  // hook useDispatch comes from react-redux and is used to call a post.slice.js action
   const dispatch = useDispatch();
 
+  // HandleLogin is the function for sending inputs to the database and checking them
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -27,17 +40,13 @@ const SignForm = () => {
       })
 
       .then((res) => {
-        // dispatch(login([console.log(res.data)]));
         dispatch(login([res.data.body.token, data.email]));
         navigate("/user");
       })
       .catch((err) => {
         console.log(err);
-        console.log("je suis pas la ");
         setError(true);
       });
-
-    // console.log(userEmailRef.current.value, UserPassRef.current.value);
   };
 
   return (
